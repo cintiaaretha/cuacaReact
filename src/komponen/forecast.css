@@ -1,0 +1,48 @@
+.forecast {
+  margin-top: 25px;
+  width: 100%;
+}
+
+.forecast h4 {
+  color: white;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.forecast-list {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.forecast-item {
+  flex: 1;
+  padding: 14px 10px;
+  border-radius: 5px;
+  text-align: center;
+  background: rgba(255,255,255,.18);
+  color: white;
+}
+
+.forecast-item p {
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+.forecast-item span {
+  display: block;
+  font-size: 1.8rem;
+  margin: 10px 0;
+}
+
+.forecast-item b {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.forecast-item small {
+  display: block;
+  margin-top: 4px;
+  font-size: .75rem;
+}
