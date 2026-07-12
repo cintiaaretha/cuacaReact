@@ -44,8 +44,9 @@ export default function Dashboard({ wilayah, onBack }) {
     [wilayah]
   )
 
-    useEffect(() => {   
-    loadCuaca() }, [loadCuaca]) 
+  useEffect(() => {
+    loadCuaca()
+  }, [loadCuaca])
 
   return (
     <div className="weather-room">

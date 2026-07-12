@@ -11,22 +11,27 @@ export default function Forecast({ data }) {
       <div className="forecast-list">
         {data.map((hari,index)=>{
           const info = ambilInfoCuaca(hari.kodeCuaca)
+          const Icon = info.icon
 
           return (
             <div
               className="forecast-item"
               key={index}>
               <p> {hari.hari} </p>
-              <span> {info.icon} </span>
-              <b> {Math.round(hari.suhu)}° </b>
+              <div className="forecast-item__row">
+                <Icon className="forecast-item__icon" />
+                <span className="forecast-divider">|</span>
+                <b> {Math.round(hari.suhu)}° </b>
               {typeof hari.suhuMin === 'number' && (
                 <small>
                   {Math.round(hari.suhuMin)}°
                 </small>
               )}
+              </div>
             </div>
           )
-        })}
+        }
+        )}
       </div>
     </div>
   )

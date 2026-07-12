@@ -6,6 +6,14 @@
   z-index: 1;
 }
 
+.wx-deco--night {
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 16, 38, .45),
+    rgba(18, 30, 62, .15)
+  );
+}
+
 .wx-sun {
   position: absolute;
   top: 8%;
@@ -19,9 +27,7 @@
     #ffd76b 45%,
     rgba(255, 215, 107, 0) 75%
   );
-
-  box-shadow:
-    0 0 80px 30px rgba(255, 215, 107, 0.55);
+  box-shadow: 0 0 80px 30px rgba(255, 215, 107, 0.55);
   animation: sunPulse 4s ease-in-out infinite;
 }
 
@@ -52,77 +58,112 @@
 
 .wx-cloud::before,
 .wx-cloud::after {
-  content:"";
-  position:absolute;
-  background:inherit;
-  border-radius:50%;
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
 }
 
 .wx-cloud--a {
-  width:180px;
-  height:60px;
-  top:22%;
-  left:-20px;
-  animation:cloudMove 18s linear infinite;
+  width: 180px;
+  height: 60px;
+  top: 22%;
+  left: -20px;
+  animation: cloudMove 18s linear infinite;
 }
 
 .wx-cloud--a::before {
-  width:85px;
-  height:85px;
-  top:-45px;
-  left:20px;
+  width: 85px;
+  height: 85px;
+  top: -45px;
+  left: 20px;
 }
 
 .wx-cloud--a::after {
-  width:65px;
-  height:65px;
-  top:-35px;
-  left:100px;
+  width: 65px;
+  height: 65px;
+  top: -35px;
+  left: 100px;
 }
 
-.wx-cloud--b {  
-  width:140px;
-  height:50px;
-  top:45%;
-  left:45%;
-  opacity:.85;
-  animation:cloudMove 24s linear infinite reverse;
+.wx-cloud--b {
+  width: 140px;
+  height: 50px;
+  top: 45%;
+  left: 45%;
+  opacity: .85;
+  animation: cloudMove 24s linear infinite reverse;
 }
 
 .wx-cloud--b::before {
-  width:65px;
-  height:65px;
-  top:-35px;
-  left:15px;
+  width: 65px;
+  height: 65px;
+  top: -35px;
+  left: 15px;
 }
 
 .wx-cloud--b::after {
-  width:50px;
-  height:50px;
-  top:-25px;
-  left:75px;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 75px;
 }
 
 .wx-cloud--c {
-  width:110px;
-  height:40px;
-  top:65%;
-  left:10%;
-  opacity:.7;
+  width: 110px;
+  height: 40px;
+  top: 65%;
+  left: 10%;
+  opacity: .7;
 }
 
 .wx-cloud--c::before {
-  width:50px;
-  height:50px;
-  top:-25px;
-  left:10px;
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 10px;
 }
 
 .wx-cloud--c::after {
-  width:40px;
-  height:40px;
-  top:-18px;
-  left:60px;
+  width: 40px;
+  height: 40px;
+  top: -18px;
+  left: 60px;
+}
+
+.wx-cloud--d {
+  width: 150px;
+  height: 55px;
+  top: 14%;
+  right: -30px;
+  opacity: .9;
+  animation: cloudMove 20s linear infinite;
+}
+
+.wx-cloud--d::before {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  top: -35px;
+  left: 20px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.wx-cloud--d::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  top: -25px;
+  left: 90px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.wx-cloud--night {
+  background: rgba(203, 213, 225, .55);
 }
 
 @keyframes cloudMove {
@@ -135,93 +176,102 @@
 }
 
 .wx-fog-band {
-  position:absolute;
-  left:-10%;
-  width:120%;
-  height:25px;
-  background:rgba(255,255,255,.45);
-  border-radius:50%;
-  filter:blur(7px);
-  animation:fogMove 10s ease-in-out infinite;
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 25px;
+  background: rgba(255,255,255,.45);
+  border-radius: 50%;
+  filter: blur(7px);
+  animation: fogMove 10s ease-in-out infinite;
 }
 
 .wx-fog-band--1 {
-  top:25%;
+  top: 25%;
 }
 
 .wx-fog-band--2 {
-  top:50%;
-  opacity:.7;
+  top: 50%;
+  opacity: .7;
 }
 
 .wx-fog-band--3 {
-  top:70%;
-  opacity:.5;
+  top: 70%;
+  opacity: .5;
 }
 
 @keyframes fogMove {
   0%,100% {
-    transform:translateX(0);
+    transform: translateX(0);
   }
   50% {
-    transform:translateX(30px);
+    transform: translateX(30px);
   }
 }
 
 .wx-rain {
-  position:absolute;
-  inset:0;
+  position: absolute;
+  inset: 0;
+}
+
+.wx-rain--night {
+  opacity: .85;
 }
 
 .wx-raindrop {
-  position:absolute;
-  top:-20px;
-  left:calc(var(--i) * 8%);
-  width:3px;
-  height:25px;
-  background:
-  linear-gradient(
+  position: absolute;
+  top: -20px;
+  left: calc(var(--i) * 8%);
+  width: 3px;
+  height: 25px;
+  border-radius: 50px;
+  background: linear-gradient(
     transparent,
     rgba(219,234,254,.9)
   );
-  animation:
-  rainFall 1s linear infinite;
-  animation-delay:
-  calc(var(--i) * .08s);
+  animation: rainFall 1s linear infinite;
+  animation-delay: calc(var(--i) * .08s);
 }
 
 .wx-rain--storm .wx-raindrop {
-  height:30px;
-  animation-duration:.6s;
+  height: 30px;
+  animation-duration: .6s;
+}
+
+.wx-rain--night .wx-raindrop {
+  background: linear-gradient(
+    transparent,
+    rgba(180,220,255,.85)
+  );
 }
 
 @keyframes rainFall {
   0% {
-    transform:translateY(0);
-    opacity:0;
+    transform: translateY(0);
+    opacity: 0;
   }
   20% {
-    opacity:1;
+    opacity: 1;
   }
   100% {
-    transform:translateY(400px);
-    opacity:0;
+    transform: translateY(400px);
+    opacity: 0;
   }
 }
 
 .wx-cloud--dark-a,
 .wx-cloud--dark-b {
-  background:rgba(71,85,105,.65);
+  background: rgba(71, 85, 105, .65);
 }
 
 .wx-bolt {
-  position:absolute;
-  top:35%;
-  right:25%;
-  width:20px;
-  height:70px;
-  background:#fde047;
-  clip-path:polygon(
+  position: absolute;
+  top: 35%;
+  right: 25%;
+  width: 20px;
+  height: 70px;
+  background: #fde047;
+  clip-path: polygon(
     50% 0,
     100% 0,
     60% 45%,
@@ -230,15 +280,16 @@
     40% 55%,
     10% 55%
   );
-  animation:boltFlash 2.5s infinite;
+  filter: drop-shadow(0 0 12px #fde047);
+  animation: boltFlash 2.5s infinite;
 }
 
 @keyframes boltFlash {
   0%,90%,100% {
-    opacity:0;
+    opacity: 0;
   }
   94%,97% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
@@ -253,10 +304,13 @@
     circle at 35% 35%,
     #fdfdf6 0%,
     #e9e6d9 55%,
-    rgba(233, 230, 217, 0) 78%
+    rgba(233,230,217,0) 78%
   );
-  box-shadow: 0 0 45px 12px rgba(233, 230, 217, 0.35);
+  box-shadow:
+    0 0 45px 12px rgba(233,230,217,.35),
+    0 0 80px rgba(255,255,255,.12);
   animation: sunPulse 5s ease-in-out infinite;
+  z-index: 1;
 }
 
 .wx-moon::before {
@@ -267,7 +321,7 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: rgba(180, 178, 165, 0.4);
+  background: rgba(180,178,165,.4);
 }
 
 .wx-moon::after {
@@ -278,7 +332,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: rgba(180, 178, 165, 0.35);
+  background: rgba(180,178,165,.35);
+  box-shadow: 0 0 8px rgba(255,255,255,.3);
 }
 
 .wx-moon--small {
@@ -301,6 +356,7 @@
   height: 3px;
   border-radius: 50%;
   background: #fff;
+  box-shadow: 0 0 6px rgba(255,255,255,.9);
   animation: starTwinkle 2.4s ease-in-out infinite;
   animation-delay: calc(var(--i) * .3s);
 }
@@ -320,6 +376,13 @@
   }
 }
 
-.wx-cloud--night {
-  background: rgba(203, 213, 225, .55);
+.wx-deco--night::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    transparent,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,.08)
+  );
 }

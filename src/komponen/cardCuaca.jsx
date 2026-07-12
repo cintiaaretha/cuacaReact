@@ -1,14 +1,9 @@
+import { WiHumidity, WiStrongWind, WiSunrise, WiSunset } from 'react-icons/wi'
 import { ambilInfoCuaca } from '../utils/kodeCuaca'
 import { ambilTemaCuaca } from '../utils/temaCuaca'
 import VisualCuaca from './visualCuaca'
 import Forecast from './forecast'
 import './cardCuaca.css'
-
-const IKON_MALAM = {
-  0: '🌙',
-  1: '🌙',
-  2: '🌙☁️',
-}
 
 export default function CardCuaca({ name, cuaca, forecast, error }) {
 
@@ -23,14 +18,15 @@ export default function CardCuaca({ name, cuaca, forecast, error }) {
 
   const info = ambilInfoCuaca(cuaca.kodeCuaca)
   const tema = ambilTemaCuaca(cuaca.kodeCuaca, cuaca.isMalam)
-  const icon = (cuaca.isMalam && IKON_MALAM[cuaca.kodeCuaca]) || info.icon
+  const icon = info.icon
 
   return (
     <div className={`weather-card ${tema.gradient}`}>
 
-      <VisualCuaca tipe={tema.decoration}/>
+      <VisualCuaca tipe={tema.decoration} />
 
       <div className="weather-card__content">
+
         <div className="weather-card__top">
           <h3 className="weather-card__region">
             {name}
@@ -55,36 +51,46 @@ export default function CardCuaca({ name, cuaca, forecast, error }) {
           </p>
         )}
 
-
         <div className="weather-card__glass">
+
           <div className="weather-card__stat">
-            💧 Kelembapan: {cuaca.kelembapan}%
+            <WiHumidity className="weather-card__icon-small" />
+            <span>Kelembapan: {cuaca.kelembapan}%</span>
           </div>
 
           <div className="weather-card__stat">
-            💨 Kecepatan Angin: {cuaca.kecepatanAngin} km/j
+            <WiStrongWind className="weather-card__icon-small" />
+            <span>Kecepatan Angin: {cuaca.kecepatanAngin} km/j</span>
           </div>
+
         </div>
 
         {(cuaca.matahariTerbit || cuaca.matahariTerbenam) && (
+
           <div className="weather-card__glass weather-card__glass--sun">
+
             {cuaca.matahariTerbit && (
               <div className="weather-card__stat">
-                🌅 Matahari Terbit: {cuaca.matahariTerbit}
+                <WiSunrise className="weather-card__icon-small" />
+                <span>Matahari Terbit: {cuaca.matahariTerbit}</span>
               </div>
             )}
 
             {cuaca.matahariTerbenam && (
               <div className="weather-card__stat">
-                🌇 Matahari Terbenam: {cuaca.matahariTerbenam}
+                <WiSunset className="weather-card__icon-small" />
+                <span>Matahari Terbenam: {cuaca.matahariTerbenam}</span>
               </div>
             )}
+
           </div>
+
         )}
 
         {forecast && (
-          <Forecast data={forecast}/>
+          <Forecast data={forecast} />
         )}
+
       </div>
     </div>
   )

@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { FiSearch, FiX, FiMapPin, FiChevronRight } from 'react-icons/fi'
 import Header from './header'
 import './halamanPencarian.css'
 
@@ -26,7 +27,9 @@ export default function HalamanPencarian({
       />
 
       <div className="search-box">
-        <span className="search-box__icon">🔍</span>
+        <span className="search-box__icon">
+          <FiSearch />
+        </span>
 
         <input
           type="text"
@@ -42,7 +45,7 @@ export default function HalamanPencarian({
             className="search-box__clear"
             onClick={() => setPencarian('')}
           >
-            ✕
+            <FiX />
           </button>
         )}
       </div>
@@ -60,14 +63,16 @@ export default function HalamanPencarian({
                 className="region-item"
                 onClick={() => pilihWilayah(item)}
               >
-                <span className="region-item__icon">📍</span>
+                <span className="region-item__icon">
+                  <FiMapPin />
+                </span>
 
                 <span className="region-item__name">
                   {item.name}
                 </span>
 
                 <span className="region-item__arrow">
-                  →
+                  <FiChevronRight />
                 </span>
               </button>
             </li>

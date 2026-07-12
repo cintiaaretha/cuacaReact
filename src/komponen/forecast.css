@@ -18,31 +18,38 @@
 .forecast-item {
   flex: 1;
   padding: 14px 10px;
-  border-radius: 5px;
+  border-radius: 12px;
   text-align: center;
   background: rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
   color: white;
 }
 
 .forecast-item p {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: .8rem;
   font-weight: 600;
 }
 
-.forecast-item span {
-  display: block;
-  font-size: 1.8rem;
-  margin: 10px 0;
+.forecast-item__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.forecast-item__icon {
+  width: 30px;
+  height: 30px;
+  color: white;
+  flex-shrink: 0;
 }
 
 .forecast-item b {
-  display: block;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .forecast-item small {
-  display: block;
-  margin-top: 4px;
-  font-size: .75rem;
+  font-size: .9rem;
+  opacity: .8;
 }
